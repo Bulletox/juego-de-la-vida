@@ -1,4 +1,4 @@
-# # version 1 Uni celula
+# ----------------------------version 1 Uni celula----------------------------
 # import copy
 # import os
 # import time
@@ -57,19 +57,30 @@
 #         tablero = evolucionar(tablero, generacion_actual=generaciones)
 #         time.sleep(0.5)  # Ajusta el tiempo de espera según tus preferencias
 
-# version 2
-# import random
+# ----------------------------version 2 entre 5 y 10 celulas----------------------------
 # import copy
 # import os
 # import time
-# import platform  # Added platform module for cross-platform clear
+# import platform
+# import random
 
-# def inicializador_tablero(filas, columnas, probabilidad_vida=0.2):
-#     return [[1 if random.random() < probabilidad_vida else 0 for _ in range(columnas)] for _ in range(filas)]
+# def inicializador_tablero(filas, columnas):
+#     # Inicializar el tablero con células vivas de manera aleatoria
+#     tablero = [[0] * columnas for _ in range(filas)]
+
+#     # Número aleatorio de células vivas entre 5 y 10
+#     num_celulas_vivas = random.randint(5, 10)
+
+#     for _ in range(num_celulas_vivas):
+#         fila = random.randint(0, filas - 1)
+#         columna = random.randint(0, columnas - 1)
+#         tablero[fila][columna] = 1
+
+#     return tablero
 
 # def imprimir_tablero(tablero):
 #     for fila in tablero:
-#         print(' '.join(['■' if celda else '□' for celda in fila]))
+#         print(' '.join(['🦠' if celda else ' ' for celda in fila]))
 
 # def contar_vecinos(tablero, fila, columna):
 #     filas, columnas = len(tablero), len(tablero[0])
@@ -96,31 +107,27 @@
 #             if tablero[fila][columna] == 1:  # Célula viva
 #                 if vecinos_vivos < 2 or vecinos_vivos > 3:
 #                     nuevo_tablero[fila][columna] = 0  # Muere por subpoblación o superpoblación
-#                 elif generacion_actual - tablero[fila][columna] > 10:
-#                     nuevo_tablero[fila][columna] = 'X'  # Cambia a 'X' after 10 generations
 #             else:  # Célula muerta
 #                 if vecinos_vivos == 3:
 #                     nuevo_tablero[fila][columna] = 1  # Revive por reproducción
 
 #     return nuevo_tablero
 
-
-
 # if __name__ == "__main__":
-#     filas, columnas = 25, 50
+#     filas, columnas = 10, 10
 #     tablero = inicializador_tablero(filas, columnas)
 
 #     generaciones = 0
-#     # for _ in range(generaciones):
 #     while True:
-#         os.system('cls' if platform.system() == 'Windows' else 'clear')  # Use platform module for cross-platform clear
+#         os.system('cls' if platform.system() == 'Windows' else 'clear')
 #         imprimir_tablero(tablero)
 #         tablero = evolucionar(tablero, generacion_actual=generaciones)
-#         time.sleep(0.1)
+#         time.sleep(0.5)
+
         
         
-# # Version 3
-# # Nueva regla Si una celula tine mas de 10 generaciones se combierte ne 🥐
+# ----------------------------Version 3----------------------------
+# # # Nueva regla Si una celula tine mas de 10 generaciones se combierte ne 🥐
 # import random
 # import copy
 # import os
@@ -178,7 +185,7 @@
 
 
 # if __name__ == "__main__":
-#     filas, columnas = 25, 50
+#     filas, columnas = 10, 10
 #     tablero = inicializador_tablero(filas, columnas)
 
 #     generaciones = 0
@@ -189,7 +196,7 @@
 #         generaciones += 1  # Incrementa el número de generaciones
 #         time.sleep(0.1)
         
-# Version 4 app 
+# ----------------------------Version 4 app---------------------------- 
 
 # import random
 # import copy
