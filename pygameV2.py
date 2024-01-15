@@ -63,4 +63,4 @@ if __name__ == "__main__":
         os.system('cls' if platform.system() == 'Windows' else 'clear')
         imprimir_tablero(tablero)
         tablero = evolucionar(tablero, generacion_actual=generaciones)
-        time.sleep(0.5)
+        time.sleep(20)
